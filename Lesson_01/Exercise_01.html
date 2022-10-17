@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+ <script>
+    `use strict`
+
+    /* 
+    Задание 1. Задать температуру в градусах по Цельсию. Вывести в alert соответствующую температуру в
+    градусах по Фаренгейту. Подсказка: расчет идет по формуле Tf = (9 / 5) * Tc + 32, где Tf —
+    температура по Фаренгейту, Tc — по Цельсию.
+    */
+    const degreesInCelcius = prompt('Введите температуру в градусах цельсия');
+    const degreesInFarenheit = (9 / 5) * degreesInCelcius + 32;
+    alert(`Вы ввели температру (C): ${degreesInCelcius}\nТемпература в Фаренгейтах (F): ${degreesInFarenheit}`);
+
+ </script>   
+</body>
+</html>
