@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GB. Lesson 02. Exercise 06</title>
+</head>
+
+<body>
+    <script>
+        /*
+        6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        где arg1, arg2 — значения аргументов, operation — строка с названием операции. В
+        зависимости от переданного значения выполнить одну из арифметических операций
+        (использовать функции из пункта 5) и вернуть полученное значение (применить switch).
+
+        */
+
+        const op = { SUM: '+', SUBTRACTION: '-', MULTIPLICATION: '*', DIVISION: '/' };
+
+        const a = +prompt("Введите первое число");
+        const b = +prompt("Введите второе число");
+
+        alert(`Сложение (${a} + ${b}): ${mathOperation(a,b, op.SUM)} \nВычитание (${a} - ${b}): ${mathOperation(a,b,op.SUBTRACTION)} \nУмножение (${a} * ${b}): ${mathOperation(a,b,op.MULTIPLICATION)} \nДеление (${a} / ${b}): ${mathOperation(a,b,op.DIVISION)} `);
+
+        function mathOperation(arg1, arg2, operation){
+            switch(operation){
+                case op.SUM: return Number(arg1)+Number(arg2);
+                case op.SUBTRACTION: return Number(arg1)-Number(arg2);
+                case op.MULTIPLICATION: return Number(arg1)*Number(arg2);
+                case op.DIVISION: return Number(arg2) === 0 ? null : Number(arg1)/Number(arg2);
+                default: return null;
+            }
+        }
+
+        
+
+    </script>
+</body>
+
+</html>
