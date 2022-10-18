@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GB. Lesson 02. Exercise 01</title>
+</head>
+<body>
+    <script>
+        `use strict`
+        
+        // 1. Почему код дает именно такие результаты?
+
+        var a = 1, b = 1, c, d;
+        
+        // Сначала "a" увеличивается на 1 => a = 1 + 1 = 2.  Затем значение a записывается в c = a = 2
+        c = ++a; alert(c); // 2
+        
+        // Сначала в "d" записывается значение b, а затем b увеличивается на 1 => d=1, b=2 
+        d = b++; alert(d); // 1
+
+        // c = (2 + (a + 1)) = 2 + 2 + 1 = 5, a=3
+        c = (2+ ++a); alert(c); // 5
+
+        // d = (2 + b) = 2 + 2 = 4, b = b + 1 = 3
+        d = (2+ b++); alert(d); // 4
+        
+        // Увеличивали а по 1 в строках 16 и 22
+        alert(a); // 3
+
+        // Увеличивали b по 1 в строках 19 и 25
+        alert(b); // 3
+
+    </script>
+</body>
+</html>

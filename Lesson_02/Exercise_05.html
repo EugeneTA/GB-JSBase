@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GB. Lesson 02. Exercise 05</title>
+</head>
+
+<body>
+    <script>
+        /*
+            5. Реализовать четыре основные арифметические операции в виде функций с двумя
+            параметрами. Обязательно использовать оператор return.
+
+        */
+
+        const a = +prompt("Введите первое число");
+        const b = +prompt("Введите второе число");
+
+        alert(`Сложение (${a} + ${b}): ${opSum(a,b)} \nВычитание (${a} - ${b}): ${opSubtraction(a,b)} \nУмножение (${a} * ${b}): ${opMultiplication(a,b)} \nДеление (${a} / ${b}): ${opDivision(a,b)} `);
+
+        function opSum(operand1, operand2) {
+            return Number(operand1) + Number(operand2);
+        }
+
+        function opSubtraction(operand1, operand2) {
+            return Number(operand1) - Number(operand2);
+        }
+
+        function opMultiplication(operand1, operand2) {
+            return Number(operand1) * Number(operand2);
+        }
+
+        function opDivision(operand1, operand2) {
+            return Number(operand2) === 0 ? null : Number(operand1)/Number(operand2);
+        }
+    </script>
+</body>
+
+</html>
