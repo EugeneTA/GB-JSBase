@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GB. Lesson 03. Exercise 02 and 03</title>
+</head>
+
+<body>
+    <script>
+        `use strict`
+
+        // 2.   С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть
+        //      сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в
+        //      зависимости от находящихся в ней товаров.
+
+        let goodBread = {
+            goodName: "Бородинский хлеб",
+            goodPrice: 34
+        }
+        let goodMilk = {
+            goodName: "Молоко 3,2",
+            goodPrice: 65
+        }
+        let goodCookies = {
+            goodName: "Печенье Юбилейное",
+            goodPrice: 42
+        }
+        let goodIceCream = {
+            goodName: "Baskin Robins",
+            goodPrice: 120
+        }
+
+        let basket = {
+            goods: [],
+            total: 0
+        }
+
+        AddGoodToTheBasket(basket, goodBread, 2);
+        AddGoodToTheBasket(basket, goodMilk, 5);
+        AddGoodToTheBasket(basket, goodCookies, 10);
+        AddGoodToTheBasket(basket, goodIceCream, 5);
+
+        PrintBasket(basket);
+
+        function AddGoodToTheBasket(basket, good, amount) {
+            if ('goodName' in good && 'goodPrice' in good && 0 < amount) {
+                basket.goods.push([good, amount, good.goodPrice * amount]);
+                basket.total += good.goodPrice * amount;
+                return basket;
+            }
+        }
+
+        function PrintBasket(basket) { 
+            console.log("Корзина:");
+            if ('goods' in basket && 'total' in basket) {
+
+                basket.goods.forEach(good => {
+                    if ('goodName' in good[0] && 'goodPrice' in good[0]) {
+                        let info = `Товар: ${good[0].goodName},`;
+                        info += ` Цена: ${good[0].goodPrice},`;
+                        info += ` Кол-во: ${good[1]}`;
+                        info += ` => Сумма: ${good[2]}`
+                        console.log(info);
+                    }
+                });
+            }
+            console.log(`Сумма: ${basket.total}`);
+        }
+    </script>
+</body>
+
+</html>

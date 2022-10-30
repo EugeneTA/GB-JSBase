@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GB. Lesson 03. Exercise 01</title>
+</head>
+<body>
+    <script>
+        `use strict`
+        
+        // 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+
+        let i = 0;
+
+        while(i <= 100){
+            if (IsPrimeNumber(i) && i > 1) console.log(i);
+            i++;
+        }
+
+        function  IsPrimeNumber(number){
+            let result = false;
+            let d = 0;
+            let i = 2;
+
+            while (i < number)
+            {
+                if (number % i == 0)
+                {
+                    d++;
+                }
+
+                i++;
+            }
+
+            if (d == 0)
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
+    </script>
+</body>
+</html>
