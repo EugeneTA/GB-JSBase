@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
+Необходимо создать функцию-конструктор/класс для продукта.
+Названия: `ProductES5` для es5 стиля, `ProductES6` для es6 стиля.
+При создании объекта от функции-конструктора/класса необходимо передавать имя
+и цену товара, эта информация должна быть сохранена в объекте.
+Также у объекта должна быть возможность выполнить метод `make25Discount`, данный
+метод должен уменьшать стоимость продукта на 25%.
+Необходимо продемонстрировать работу с объектом (в свободной форме).
+-->
+<script>
+  "use strict";
+
+  function ProductES5(name, price){
+    this.name = name;
+    this.price = price;
+    this.isDiscountApplied = false;
+  }
+
+  ProductES5.prototype.make25Discount = function(){
+    if (this.isDiscountApplied === false){
+      this.price *= 0.75;
+      this.isDiscountApplied = true;
+    }
+    else{
+      console.error("Discount already applied.");
+    } 
+  }
+
+  ProductES5.prototype.printInfoToConsole = function(){
+    console.log(`Название продукта: ${this.name} , Цена: ${this.price}`);
+  }
+
+  const appleES5 = new ProductES5("яблоко", 100);
+  const milkES5 = new ProductES5("milk", 200);
+
+  console.log("*** ES5 Style ***");
+  appleES5.printInfoToConsole();
+  console.log("Apply 25% discount");
+  appleES5.make25Discount();
+  appleES5.printInfoToConsole();
+
+  milkES5.printInfoToConsole();
+  console.log("Apply 25% discount");
+  milkES5.make25Discount();
+  milkES5.printInfoToConsole();
+  console.log("Apply 25% discount");
+  milkES5.make25Discount();
+  milkES5.printInfoToConsole();
+
+
+  class ProductES6{
+    constructor(name, price){
+      this.name = name;
+      this.price = price;
+      this.isDiscountApplied = false;
+    }
+
+    make25Discount(){
+      if (this.isDiscountApplied === false){
+        this.price *= 0.75;
+        this.isDiscountApplied = true;
+      }
+      else{
+        console.error("Discount already applied.");
+      }  
+    }
+
+    printInfoToConsole(){
+    console.log(`Название продукта: ${this.name} , Цена: ${this.price}`);
+  }
+  }
+
+  let appleES6 = new ProductES6("яблоко", 100);
+  let milkES6 = new ProductES6("milk", 200);
+
+  console.log("*** ES6 Style ***");
+  appleES6.printInfoToConsole();
+  console.log("Apply 25% discount");
+  appleES6.make25Discount();
+  appleES6.printInfoToConsole();
+  console.log("Apply 25% discount");
+  appleES6.make25Discount();
+  appleES6.printInfoToConsole();
+
+  milkES6.printInfoToConsole();
+  console.log("Apply 25% discount");
+  milkES6.make25Discount();
+  milkES6.printInfoToConsole();
+
+</script>
+</body>
+</html>
