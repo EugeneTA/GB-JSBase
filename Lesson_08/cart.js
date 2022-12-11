@@ -83,7 +83,6 @@ class CartItem {
      * @return {string} - переданный шаблон, заполенный данными о продукте. 
      */
     getHtmlCode(template) {
-
         if (!this.product) return "";
 
         return template
